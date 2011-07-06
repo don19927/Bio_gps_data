@@ -1,0 +1,29 @@
+import pymysql
+
+conn = pymysql.connect(user='root',passwd="",db='bio_gps')
+
+
+cur = conn.cursor()
+
+cur.execute("""CREATE TABLE Human_U133A/GNF1H_Gene_Atlas (gene_pod varchar(255), 721_B_lymphoblasts int, 
+			Adipocyte int, AdrenalCortex int, Adrenalgland int,	Amygdala int,      
+			Appendix int, AtrioventricularNode int,	BDCA4+_DentriticCells int, 		
+			Bonemarrow int,	BronchialEpithelialCells int, CD105+_Endothelial int,	
+			CD14+_Monocytes int, CD19+_BCells(neg_sel) int, CD33+_Myeloid int, 	
+			CD34+ int, CD4+_Tcells int, CD56+_NKCells int,	CD71+_EarlyErythroid int,
+			CD8+_Tcells int, CardiacMyocytes int, Caudatenucleus int, Cerebellum int, 
+			CerebellumPeduncles int, CiliaryGanglion int, CingulateCortex int, 	      
+			Colorectaladenocarcinoma int, DorsalRootGanglion int, FetalThyroid int,		
+			Fetalbrain int,	Fetalliver int,	Fetallung int,	GlobusPallidus int,	Heart int,
+			Hypothalamus int, Kidney int, Leukemia_chronicMyelogenousK_562 int,
+			Leukemia_promyelocytic_HL_60 int, Leukemialymphoblastic(MOLT_4) int, Liver int,
+			Lung int, Lymphnode int, Lymphoma_burkitts(Daudi) int,	Lymphoma_burkitts(Raji) int,
+			MedullaOblongata int, OccipitalLobe int, OlfactoryBulb int,	Ovary int, Pancreas int,
+			PancreaticIslet int, ParietalLobe int, Pituitary int, Placenta int, Pons int, 
+			PrefrontalCortex int, Prostate int, Salivarygland int, SkeletalMuscle int, Skin	int,
+			SmoothMuscle int, Spinalcord int, SubthalamicNucleus int, SuperiorCervicalGanglion int,
+			TemporalLobe int, Testis int, TestisGermCell int, TestisIntersitial int, 
+			TestisLeydigCell int, TestisSeminiferousTubule int, Thalamus int, Thymus int,
+			Thyroid int, Tongue int, Tonsil int, Trachea int, TrigeminalGanglion int, Uterus int,
+			UterusCorpus int, WholeBlood int, Wholebrain int, colon int, pineal_day int, 
+			pineal_night int, retina int, small_intestine int)""")
