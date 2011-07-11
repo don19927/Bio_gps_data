@@ -6,15 +6,15 @@ conn = pymysql.connect(user='root',passwd="",db='bio_gps')
 
 cur = conn.cursor()
 
-cur.execute(
 
+insert_statement = open('/Users/Donnie/Desktop/NYU Research/Human data table/gnf1h.annot2007.csv', 'rb')
 
+x = 1
 
+while x < 22259:
+	fob = insert_statement.readline(x)
+	cur.execute("INSERT INTO Human_GNF1H_Annotation VALUE(%s)",(fob))
+	x += 1
+	
 
-
-"""INSERT INTO Human_GNF1H_Annotation (ProbesetID, Num_matched_probes, RefSeq,
-UniGene, RIKEN,	EntrezGene, Symbol, Description, Ensembl_representative, Cross_hyb_EntrezGeneIDs)""")
-
-
-for row in csvreader
-	insert_statemnt = """INSERT INTO
+	 
