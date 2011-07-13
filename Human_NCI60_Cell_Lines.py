@@ -7,13 +7,15 @@ conn = pymysql.connect(user='root',passwd="",db='bio_gps')
 cur = conn.cursor()
 
 
-insert_statement = csv.reader(open('/Users/Donnie/Desktop/NYU Research/Human data table/gnf1h.annot2007.csv', 'rb'))
+insert_statement = csv.reader(open('/Users/Donnie/Desktop/gnf1h.annot2007.csv', 'rU'))
 
-for row in insert_statement:
-	print row
-	cur.execute("""INSERT INTO Human_GNF1H_Annotation  (ProbesetID, Num_matched_probes, RefSeq, 
-					UniGene, RIKEN, EntrezGene, Symbol, Description, Ensembl_representative, 
-					Cross_hyb_EntrezGeneIDs) VALUES(%s)""",(row))
+csv.field_size_limit(1000000)
+
+for ProbesetID, Num_matched_probes, RefSeq, UniGene, RIKEN, EntrezGene, Symbol, Description in insert_statement:
 	
-
-#The the problem with this code is the sql VALUES statement treats the variable row as only one value.  so far I am only able to upload data into one column and not the entire table.  Having trouble getting python to recognize the values separately.
+	cur.execute("""INSERT INTO Human_GNF1H_Annotation  (ProbesetID, Num_matched_probes, RefSeq, 
+					UniGene, RIKEN, EntrezGene, Symbol, Description) VALUES(%s,%s,%s,%s,%s,%s,%s,%s)""",(ProbesetID, Num_matched_probes, RefSeq, 
+					UniGene, RIKEN, EntrezGene, Symbol, Description))
+	
+# I had to delete the last two columns because every time I tried to include them I would get the following error
+# ValueError: need more than 9 values to unpack
