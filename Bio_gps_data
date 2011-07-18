@@ -1,17 +1,4 @@
-import pymysql
 
-conn = pymysql.connect(user='root',passwd="",db='bio_gps')
-
-
-cur = conn.cursor()
-
-cur.execute("""CREATE TABLE Human_U133A_GNF1H_Gene_Atlas2 (gene_pod varchar(255), 
-	    	721_B_lymphoblasts decimal(11,3), Adipocyte decimal(11,3), AdrenalCortex decimal(11,3), Adrenalgland decimal(11,3), Amygdala decimal(11,3), Appendix decimal(11,3), AtrioventricularNode decimal(11,3), BDCA4_pos_DentriticCells decimal(11,3), Bonemarrow decimal(11,3), BronchialEpithelialCells decimal(11,3), CD105_pos_Endothelial decimal(11,3), CD14_pos_Monocytes decimal(11,3), CD19_pos_BCells_neg_sel decimal(11,3), CD33_pos_Myeloid decimal(11,3), CD34_pos decimal(11,3), CD4_pos_Tcells decimal(11,3), CD56_pos_NKCells decimal(11,3),	CD71_pos_EarlyErythroid decimal(11,3), CD8_pos_Tcells decimal(11,3), CardiacMyocytes decimal(11,3), Caudatenucleus decimal(11,3), Cerebellum decimal(11,3), CerebellumPeduncles decimal(11,3), CiliaryGanglion decimal(11,3), CingulateCortex decimal(11,3), Colorectaladenocarcinoma decimal(11,3), DorsalRootGanglion decimal(11,3), FetalThyroid decimal(11,3), Fetalbrain decimal(11,3), Fetalliver decimal(11,3), Fetallung decimal(11,3), GlobusPallidus decimal(11,3), Heart decimal(11,3), Hypothalamus decimal(11,3), Kidney decimal(11,3), Leukemia_chronicMyelogenousK_562 decimal(11,3),
-Leukemia_promyelocytic_HL_60 decimal(11,3), Leukemialymphoblastic_MOLT_4 decimal(11,3), Liver decimal(11,3),
-Lung decimal(11,3), Lymphnode decimal(11,3), Lymphoma_burkitts_Daudi decimal(11,3),	Lymphoma_burkitts_Raji decimal(11,3), MedullaOblongata decimal(11,3), OccipitalLobe decimal(11,3), OlfactoryBulb decimal(11,3),	Ovary decimal(11,3), Pancreas decimal(11,3), PancreaticIslet decimal(11,3), ParietalLobe decimal(11,3), Pituitary decimal(11,3), Placenta decimal(11,3), Pons decimal(11,3), PrefrontalCortex decimal(11,3), Prostate decimal(11,3), Salivarygland decimal(11,3), SkeletalMuscle decimal(11,3), Skin decimal(11,3), SmoothMuscle decimal(11,3), Spinalcord decimal(11,3), SubthalamicNucleus decimal(11,3), SuperiorCervicalGanglion decimal(11,3), TemporalLobe decimal(11,3), 
-Testis decimal(11,3), TestisGermCell decimal(11,3), Testisintersitial decimal(11,3), TestisLeydigCell decimal(11,3), TestisSeminiferousTubule decimal(11,3), Thalamus decimal(11,3), Thymus decimal(11,3), Thyroid decimal(11,3), 
-Tongue decimal(11,3), Tonsil decimal(11,3), Trachea decimal(11,3), TrigeminalGanglion decimal(11,3), Uterus decimal(11,3),
-UterusCorpus decimal(11,3), WholeBlood decimal(11,3), Wholebrain decimal(11,3), colon decimal(11,3), pineal_day decimal(11,3), pineal_night decimal(11,3), retina decimal(11,3), small_intestine decimal(11,3))""")
 			
 			
 			
