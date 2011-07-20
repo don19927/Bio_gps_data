@@ -30,48 +30,42 @@ conn = pymysql.connect(user='root',passwd="",db='bio_gps')
 cur = conn.cursor()
 
 
-insert_statement = csv.reader(open('','rU'))
+insert_state = csv.reader(open('/Users/Donnie/Desktop/NYU Research/Human data table/U133AGNF1B.gcrma.avg.csv','rU'))
 
 csv.field_size_limit(10000000000000)
 
-#Keep getting a syntax error at this point.  Not sure why it is the same as the other table I 
-#completed
-for gene_pod, 721B_lymphoblasts, Adipocyte, AdrenalCortex, Adrenalgland, Amygdala, Appendix, AtrioventricularNode, BDCA4_pos_DentriticCells, Bonemarrow, BronchialEpithelialCells, CD105_pos_Endothelial, CD14_pos_Monocytes, CD19_pos_BCells_neg_sel, CD33_pos_Myeloid, CD34_pos, CD4_pos_Tcells, CD56_pos_NKCells,	CD71_pos_EarlyErythroid, CD8_pos_Tcells, CardiacMyocytes, Caudatenucleus, Cerebellum, CerebellumPeduncles, CiliaryGanglion, CingulateCortex, Colorectaladenocarcinoma, DorsalRootGanglion, FetalThyroid, Fetalbrain, Fetalliver, Fetallung, GlobusPallidus, Heart, Hypothalamus, Kidney, Leukemia_chronicMyelogenousK_562, Leukemia_promyelocytic_HL_60, Leukemialymphoblastic_MOLT_4, Liver, Lung, Lymphnode, Lymphoma_burkitts_Daudi,Lymphoma_burkitts_Raji, MedullaOblongata, OccipitalLobe, OlfactoryBulb, Ovary, Pancreas,PancreaticIslet, ParietalLobe, Pituitary, Placenta, Pons, PrefrontalCortex,Prostate, Salivarygland, SkeletalMuscle, Skin, SmoothMuscle, Spinalcord, SubthalamicNucleus, SuperiorCervicalGanglion,TemporalLobe, Testis, TestisGermCell, Testisintersitial, TestisLeydigCell,TestisSeminiferousTubule, Thalamus, Thymus,Thyroid, Tongue, Tonsil, Trachea, TrigeminalGanglion, Uterus,UterusCorpus, WholeBlood,Wholebrain, colon, pineal_day, pineal_night, retina, small_intestine in insert_statement:
+#It will not take int values in the for statement
+for gene_pod, col_721_B_lymphoblasts, Adipocyte, AdrenalCortex, Adrenalgland, Amygdala, Appendix, atrioventricularNode, BDCA4_pos_DentriticCells, Bonemarrow, BronchialEpithelialCells, CD105_pos_Endothelial, CD14_pos_Monocytes, CD19_pos_BCells_neg_sel, CD33_pos_Myeloid, 	CD34_pos, CD4_pos_Tcells, CD56_pos_NKCells, CD71_pos_EarlyErythroid, CD8_pos_Tcells, CardiacMyocytes, Caudatenucleus, Cerebellum, CerebellumPeduncles, CiliaryGanglion, CingulateCortex, Colorectaladenocarcinoma, DorsalRootGanglion, FetalThyroid, Fetalbrain, Fetalliver, Fetallung, GlobusPallidus, Heart, Hypothalamus, Kidney, Leukemia_chronicMyelogenousK_562, Leukemia_promyelocytic_HL_60, Leukemialymphoblastic_MOLT_4, Liver, Lung, Lymphnode, Lymphoma_burkitts_Daudi, Lymphoma_burkitts_Raji, MedullaOblongata, OccipitalLobe, OlfactoryBulb, Ovary, Pancreas, PancreaticIslet, ParietalLobe, Pituitary, Placenta, Pons, PrefrontalCortex,Prostate, Salivarygland, SkeletalMuscle, Skin, SmoothMuscle, Spinalcord, SubthalamicNucleus, SuperiorCervicalGanglion, TemporalLobe, Testis, TestisGermCell, Testisintersitial, TestisLeydigCell, TestisSeminiferousTubule, Thalamus, Thymus,Thyroid, Tongue, Tonsil, Trachea, TrigeminalGanglion, Uterus, UterusCorpus, WholeBlood, Wholebrain, colon, pineal_day, pineal_night, retina, small_intestine in insert_state:
 
-	cur.execute("""INSERT INTO Human_U133A_GNF1H_Gene_Atlas_2 (gene_pod, 
-			721B_lymphoblasts, Adipocyte, AdrenalCortex, Adrenalgland, Amygdala, Appendix, 
-			AtrioventricularNode, BDCA4_pos_DentriticCells, Bonemarrow, BronchialEpithelialCells,
-			CD105_pos_Endothelial, CD14_pos_Monocytes, CD19_pos_BCells_neg_sel, CD33_pos_Myeloid, 
-			CD34_pos, CD4_pos_Tcells, CD56_pos_NKCells, CD71_pos_EarlyErythroid, CD8_pos_Tcells, 
-			CardiacMyocytes, Caudatenucleus, Cerebellum, CerebellumPeduncles, CiliaryGanglion, 
-			CingulateCortex, Colorectaladenocarcinoma, DorsalRootGanglion, FetalThyroid,
-			Fetalbrain, Fetalliver , Fetallung, GlobusPallidus, Heart, Hypothalamus, Kidney, 
-			Leukemia_chronicMyelogenousK_562, Leukemia_promyelocytic_HL_60, 
-			Leukemialymphoblastic_MOLT_4, Liver, Lung, Lymphnode, Lymphoma_burkitts_Daudi,
-			Lymphoma_burkitts_Raji, MedullaOblongata, OccipitalLobe, OlfactoryBulb, Ovary, Pancreas,
-			PancreaticIslet, ParietalLobe, Pituitary, Placenta, Pons, PrefrontalCortex,
-			Prostate, Salivarygland, SkeletalMuscle, Skin, SmoothMuscle, Spinalcord, 
-			SubthalamicNucleus, SuperiorCervicalGanglion,TemporalLobe, Testis, TestisGermCell, 
-			Testisintersitial, TestisLeydigCell,TestisSeminiferousTubule, Thalamus, Thymus,Thyroid, 
-			Tongue, Tonsil, Trachea, TrigeminalGanglion, Uterus,UterusCorpus, WholeBlood,
-			Wholebrain, colon, pineal_day, pineal_night, retina, small_intestine)
+	cur.execute("""INSERT INTO Human_U133A_GNF1H_Gene_Atlas_2 (gene_pod, 721_B_lymphoblasts, Adipocyte,
+	AdrenalCortex, Adrenalgland, Amygdala, Appendix, atrioventricularNode, BDCA4_pos_DentriticCells,
+	Bonemarrow, BronchialEpithelialCells, CD105_pos_Endothelial, CD14_pos_Monocytes, CD19_pos_BCells_neg_sel,
+	CD33_pos_Myeloid, CD34_pos, CD4_pos_Tcells, CD56_pos_NKCells, CD71_pos_EarlyErythroid, CD8_pos_Tcells, 
+	CardiacMyocytes, Caudatenucleus, Cerebellum, CerebellumPeduncles, CiliaryGanglion, CingulateCortex,
+	Colorectaladenocarcinoma, DorsalRootGanglion, FetalThyroid, Fetalbrain, Fetalliver, Fetallung, 
+	GlobusPallidus, Heart, Hypothalamus, Kidney, Leukemia_chronicMyelogenousK_562,
+	Leukemia_promyelocytic_HL_60, Leukemialymphoblastic_MOLT_4, Liver, Lung, Lymphnode, 
+	Lymphoma_burkitts_Daudi, Lymphoma_burkitts_Raji, MedullaOblongata, OccipitalLobe, OlfactoryBulb, 
+	Ovary, Pancreas, PancreaticIslet, ParietalLobe, Pituitary, Placenta, Pons, PrefrontalCortex,
+	Prostate, Salivarygland, SkeletalMuscle, Skin, SmoothMuscle, Spinalcord, SubthalamicNucleus,
+	SuperiorCervicalGanglion, TemporalLobe, Testis, TestisGermCell, Testisintersitial, TestisLeydigCell,
+	TestisSeminiferousTubule, Thalamus, Thymus, Thyroid, Tongue, Tonsil, Trachea, TrigeminalGanglion,
+	Uterus, UterusCorpus, WholeBlood, Wholebrain, colon, pineal_day, pineal_night, retina, small_intestine)
 			
-			
-VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,
-%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)""",
-(gene_pod, 721_B_lymphoblasts, Adipocyte, AdrenalCortex, Adrenalgland, Amygdala, Appendix, 
-AtrioventricularNode, BDCA4_pos_DentriticCells, Bonemarrow, BronchialEpithelialCells,
-CD105_pos_Endothelial, CD14_pos_Monocytes, CD19_pos_BCells_neg_sel, CD33_pos_Myeloid,  
-CD34_pos, CD4_pos_Tcells, CD56_pos_NKCells, CD71_pos_EarlyErythroid, CD8_pos_Tcells, 
-CardiacMyocytes, Caudatenucleus, Cerebellum, CerebellumPeduncles, CiliaryGanglion, 
-CingulateCortex, Colorectaladenocarcinoma, DorsalRootGanglion, FetalThyroid,
-Fetalbrain, Fetalliver , Fetallung, GlobusPallidus, Heart, Hypothalamus, Kidney, 
-Leukemia_chronicMyelogenousK_562, Leukemia_promyelocytic_HL_60, 
-Leukemialymphoblastic_MOLT_4, Liver, Lung, Lymphnode, Lymphoma_burkitts_Daudi,
-Lymphoma_burkitts_Raji, MedullaOblongata, OccipitalLobe, OlfactoryBulb, Ovary, Pancreas,
-PancreaticIslet, ParietalLobe, Pituitary, Placenta, Pons, PrefrontalCortex,
-Prostate, Salivarygland, SkeletalMuscle, Skin, SmoothMuscle, Spinalcord, 
-SubthalamicNucleus, SuperiorCervicalGanglion,TemporalLobe, Testis, TestisGermCell, 
-Testisintersitial, TestisLeydigCell,TestisSeminiferousTubule, Thalamus, Thymus,Thyroid, 
-Tongue, Tonsil, Trachea, TrigeminalGanglion, Uterus,UterusCorpus, WholeBlood,
-Wholebrain, colon, pineal_day, pineal_night, retina, small_intestine))
+	VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s,
+	%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s,
+	%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s,
+	%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)""",(gene_pod, col_721_B_lymphoblasts, Adipocyte,
+	AdrenalCortex, Adrenalgland, Amygdala, Appendix, atrioventricularNode, BDCA4_pos_DentriticCells,
+	Bonemarrow, BronchialEpithelialCells, CD105_pos_Endothelial, CD14_pos_Monocytes, CD19_pos_BCells_neg_sel,
+	CD33_pos_Myeloid, CD34_pos, CD4_pos_Tcells, CD56_pos_NKCells, CD71_pos_EarlyErythroid, CD8_pos_Tcells, 
+	CardiacMyocytes, Caudatenucleus, Cerebellum, CerebellumPeduncles, CiliaryGanglion, CingulateCortex,
+	Colorectaladenocarcinoma, DorsalRootGanglion, FetalThyroid, Fetalbrain, Fetalliver, Fetallung, 
+	GlobusPallidus, Heart, Hypothalamus, Kidney, Leukemia_chronicMyelogenousK_562,
+	Leukemia_promyelocytic_HL_60, Leukemialymphoblastic_MOLT_4, Liver, Lung, Lymphnode, 
+	Lymphoma_burkitts_Daudi, Lymphoma_burkitts_Raji, MedullaOblongata, OccipitalLobe, OlfactoryBulb, 
+	Ovary, Pancreas, PancreaticIslet, ParietalLobe, Pituitary, Placenta, Pons, PrefrontalCortex,
+	Prostate, Salivarygland, SkeletalMuscle, Skin, SmoothMuscle, Spinalcord, SubthalamicNucleus,
+	SuperiorCervicalGanglion, TemporalLobe, Testis, TestisGermCell, Testisintersitial, TestisLeydigCell,
+	TestisSeminiferousTubule, Thalamus, Thymus, Thyroid, Tongue, Tonsil, Trachea, TrigeminalGanglion,
+	Uterus,UterusCorpus, WholeBlood,Wholebrain, colon, pineal_day, pineal_night, retina, small_intestine))
