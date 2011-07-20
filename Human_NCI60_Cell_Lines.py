@@ -1,3 +1,5 @@
+
+
 import pymysql
 import csv
 
@@ -6,23 +8,9 @@ conn = pymysql.connect(user='root',passwd="",db='bio_gps')
 
 cur = conn.cursor()
 
-
-insert_statement = csv.reader(open('/Users/Donnie/Desktop/gnf1h.annot2007.csv', 'rU'))
-
-csv.field_size_limit(1000000)
-
-for ProbesetID, Num_matched_probes, RefSeq, UniGene, RIKEN, EntrezGene, Symbol, Description in insert_statement:
-	
-	cur.execute("""INSERT INTO Human_GNF1H_Annotation  (ProbesetID, Num_matched_probes, RefSeq, 
-					UniGene, RIKEN, EntrezGene, Symbol, Description) VALUES(%s,%s,%s,%s,%s,%s,%s,%s)""",(ProbesetID, Num_matched_probes, RefSeq, 
-					UniGene, RIKEN, EntrezGene, Symbol, Description))
-	
-# I had to delete the last two columns because every time I tried to include them I would get the following error
-# ValueError: need more than 9 values to unpack
-
-
-
-
+cur.execute("""CREATE TABLE Human_GNF1H_Annotation (ProbesetID varchar(255), Num_matched_probes int,
+RefSeq varchar(255), UniGene varchar(255), RIKEN varchar(255),	EntrezGene int,	Symbol varchar(255),
+Description	varchar(255), Ensembl_representative varchar(255), Cross_hyb_EntrezGeneIDs varchar(255))""")
 
 #here is the original code with commented issues
 
