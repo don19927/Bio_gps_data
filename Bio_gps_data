@@ -1,6 +1,4 @@
-#This code currently has a syntax error because in the for......in  : statement there cannot be any int
-#but the column names of the csv file have int in them.  When I tried to remove these ints I kept getting the 
-#ValueError: to many values to unpack.
+#The csv.DictReader would place 0.00 value for all columns but when I went back to csv.reader I was able to get the #correct information in the table.
 
 
 
