@@ -1,4 +1,3 @@
-
 import pymysql
 import csv
 
@@ -9,7 +8,7 @@ cur = conn.cursor()
 
 cur.execute("""CREATE TABLE Human_GNF1H_Annotation (ProbesetID varchar(255), Num_matched_probes int,
 RefSeq varchar(255), UniGene varchar(255), RIKEN varchar(255),	EntrezGene int,	Symbol varchar(255),
-Description	varchar(255), Ensembl_representative varchar(255), Cross_hyb_EntrezGeneIDs varchar(255))""")
+Description	varchar(2500), Ensembl_representative varchar(255), Cross_hyb_EntrezGeneIDs varchar(255))""")
 
 #here is the original code with commented issues
 
