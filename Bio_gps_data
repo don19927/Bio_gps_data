@@ -1,4 +1,4 @@
-#The csv.DictReader would place 0.00 value for all columns but when I went back to csv.reader I was able to get the #correct information in the table.
+#This is the create table statement
 
 
 
@@ -19,8 +19,8 @@ UterusCorpus decimal(11,3), WholeBlood decimal(11,3), Wholebrain decimal(11,3), 
 		
 
 
-import pymysql
-import csv
+#This inserts the data into the table
+
 
 conn = pymysql.connect(user='root',passwd="",db='bio_gps')
 
